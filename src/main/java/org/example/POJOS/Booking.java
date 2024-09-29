@@ -9,28 +9,12 @@ public class booking {
     private bookingdates bookingdates;
 
 
-    public org.example.ex_22092024.GSONPUT.bookingdates getBookingdates() {
-        return bookingdates;
-    }
-
-    public void setBookingdates(org.example.ex_22092024.GSONPUT.bookingdates bookingdates) {
-        this.bookingdates = bookingdates;
-    }
-
     public String getFirstname() {
         return firstname;
     }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
-    }
-
-    public Integer getTotalprice() {
-        return totalprice;
-    }
-
-    public void setTotalprice(Integer totalprice) {
-        this.totalprice = totalprice;
     }
 
     public String getLastname() {
@@ -41,6 +25,14 @@ public class booking {
         this.lastname = lastname;
     }
 
+    public Integer getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(Integer totalprice) {
+        this.totalprice = totalprice;
+    }
+
     public Boolean getDepositepaid() {
         return depositepaid;
     }
@@ -49,6 +41,16 @@ public class booking {
         this.depositepaid = depositepaid;
     }
 
+    public org.example.POJOS.bookingdates getBookingdates() {
+        return bookingdates;
+    }
+
+    public void setBookingdates(org.example.POJOS.bookingdates bookingdates) {
+        this.bookingdates = bookingdates;
+    }
+
+    private String additionalneeds;
+
     public String getAdditionalneeds() {
         return additionalneeds;
     }
@@ -56,5 +58,4 @@ public class booking {
     public void setAdditionalneeds(String additionalneeds) {
         this.additionalneeds = additionalneeds;
     }
-    private String additionalneeds;
 }

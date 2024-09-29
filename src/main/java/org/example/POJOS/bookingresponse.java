@@ -13,11 +13,11 @@ public class bookingresponse {
         this.bookingid = bookingid;
     }
 
-    public org.example.ex_22092024.GSONPUT.booking getBooking() {
+    public org.example.POJOS.booking getBooking() {
         return booking;
     }
 
-    public void setBooking(org.example.ex_22092024.GSONPUT.booking booking) {
+    public void setBooking(org.example.POJOS.booking booking) {
         this.booking = booking;
     }
 }
