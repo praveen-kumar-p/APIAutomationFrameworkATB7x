@@ -11,6 +11,5 @@ public class TestCreatebookingGET {
     @Test
     public void testcreateGET01 (){
         Assert.assertEquals(true, true);
-
     }
 }
