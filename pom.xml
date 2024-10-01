@@ -106,6 +106,13 @@
       <version>1.21</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.heroku.sdk/heroku-maven-plugin -->
+    <dependency>
+      <groupId>com.heroku.sdk</groupId>
+      <artifactId>heroku-maven-plugin</artifactId>
+      <version>3.0.7</version>
+    </dependency>
+
 
   </dependencies>
 </project>

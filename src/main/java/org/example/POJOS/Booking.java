@@ -1,13 +1,34 @@
 package org.example.POJOS;
 
-public class booking {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class Booking {
+
+
+    @SerializedName("firstname")
+    @Expose
     private String firstname;
-    private String lastname;
-    private Integer totalprice;
-    private Boolean depositepaid;
-    private bookingdates bookingdates;
 
+    @SerializedName("lastname")
+    @Expose
+    private String lastname;
+
+    @SerializedName("totalprice")
+    @Expose
+    private Integer totalprice;
+
+    @SerializedName("depositpaid")
+    @Expose
+    private Boolean depositepaid;
+
+    @SerializedName("bookingdates")
+    @Expose
+    private Bookingdates bookingdates;
+
+    @SerializedName("additionalneeds")
+    @Expose
+    private String additionalneeds;
 
     public String getFirstname() {
         return firstname;
@@ -41,15 +62,13 @@ public class booking {
         this.depositepaid = depositepaid;
     }
 
-    public org.example.POJOS.bookingdates getBookingdates() {
+    public Bookingdates getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(org.example.POJOS.bookingdates bookingdates) {
+    public void setBookingdates(Bookingdates bookingdates) {
         this.bookingdates = bookingdates;
     }
-
-    private String additionalneeds;
 
     public String getAdditionalneeds() {
         return additionalneeds;

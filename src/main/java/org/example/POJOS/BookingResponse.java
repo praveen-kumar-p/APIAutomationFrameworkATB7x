@@ -1,9 +1,9 @@
 package org.example.POJOS;
 
-public class bookingresponse {
+public class BookingResponse {
 
     private Integer bookingid;
-    private booking booking;
+    private Booking booking;
 
     public Integer getBookingid() {
         return bookingid;
@@ -13,11 +13,11 @@ public class bookingresponse {
         this.bookingid = bookingid;
     }
 
-    public org.example.POJOS.booking getBooking() {
+    public Booking getBooking() {
         return booking;
     }
 
-    public void setBooking(org.example.POJOS.booking booking) {
+    public void setBooking(Booking booking) {
         this.booking = booking;
     }
 }

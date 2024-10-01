@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="ATB7xJAVAProgram/APIAutomationFrameworkATB7x">
         <classes>
-            <class name="org.example.tests.CRUD.TestCreatebookingpost">
+            <class name="org.example.tests.CRUD.testcasecreatepost">
             </class>
         </classes>
     </test>
