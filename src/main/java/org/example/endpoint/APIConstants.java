@@ -1,7 +1,5 @@
 package org.example.endpoint;
 
-
-
 public class APIConstants {
 
     public static String BASE_URL  = "https://restful-booker.herokuapp.com";

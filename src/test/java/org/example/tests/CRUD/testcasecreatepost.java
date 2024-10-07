@@ -9,45 +9,43 @@ import io.qameta.allure.Description;
 import org.example.POJOS.BookingResponse;
 import org.example.base.Baseclass;
 import org.example.endpoint.APIConstants;
-import org.example.utils.*;
-import org.hamcrest.Matcher;
+import org.example.utils.propertyReader;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.qameta.allure.*;
-import java.util.PropertyPermission;
-
-import static io.restassured.RestAssured.requestSpecification;
 import static org.assertj.core.api.Assertions.*;
 
 public class testcasecreatepost extends Baseclass{
 
-    @Owner("Praveen")
+    @Link(name = "Link to TC", url = "https://bugz.atlassian.net/browse/RBT-4")
+    @Issue("JIRA_RBT-4")
+    @TmsLink("RBT-4")
+    @Owner("Promode")
     @Severity(SeverityLevel.BLOCKER)
-    @Description("Verify that post request is working fine.")
+    @Description("Verify that POST request is working fine.")
     @Test
-    public void TestCreatePost(){
+    public void testVerifyCreateBookingPOST01() {
         requestSpecification
                 .basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
 
         response = RestAssured.given(requestSpecification)
                 .when().body(payloadsmanager.CreatePayloadBookingAsString()).post();
         validatableResponse = response.then().log().all();
-//        validatableResponse.statusCode(Integer.parseInt(propertyReader.readkey("booking.post.statuscode.success")));
+        validatableResponse.statusCode(Integer.parseInt(propertyReader.readKey("booking.post.statuscode.success")));
 
-        validatableResponse.statusCode(200);
-        // Default Assertion
-        validatableResponse.body("booking.firstname", Matchers.equalTo(propertyReader.readkey("booking.post.firstname")));
-
+        //Default Rest Assured
+        validatableResponse.body("booking.firstname", Matchers.equalTo(propertyReader.readKey("booking.post.firstname")));
 
         BookingResponse bookingResponse = payloadsmanager.bookingResponseJava(response.asString());
 
         // AssertJ
         assertThat(bookingResponse.getBookingid()).isNotNull();
         assertThat(bookingResponse.getBooking().getFirstname()).isNotNull().isNotBlank();
-        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(propertyReader.readkey("booking.post.firstname"));
+        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(propertyReader.readKey("booking.post.firstname"));
 
-        // TestNG Assertion
+        // TestNG Assertions
         assertaction.verifyStatusCode(response, 200);
     }
 }
+ //your code is working good
