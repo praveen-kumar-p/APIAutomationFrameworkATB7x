@@ -1,6 +1,5 @@
 package org.example.tests.CRUD;
 
-import groovy.beans.PropertyReader;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -11,7 +10,6 @@ import org.example.base.Baseclass;
 import org.example.endpoint.APIConstants;
 import org.example.utils.propertyReader;
 import org.hamcrest.Matchers;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.qameta.allure.*;
 import static org.assertj.core.api.Assertions.*;

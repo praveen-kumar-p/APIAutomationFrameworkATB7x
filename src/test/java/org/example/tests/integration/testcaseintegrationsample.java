@@ -1,7 +1,5 @@
 package org.example.tests.integration;
 
-import com.sun.source.tree.LambdaExpressionTree;
-import groovy.beans.PropertyReader;
 import io.qameta.allure.Owner;
 import io.restassured.RestAssured;
 import io.qameta.allure.Description;
@@ -10,11 +8,9 @@ import org.example.POJOS.BookingResponse;
 import org.example.base.Baseclass;
 import org.example.endpoint.APIConstants;
 import org.example.utils.propertyReader;
-import org.hamcrest.Matchers;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.example.base.Baseclass;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class testcaseintegrationsample extends Baseclass{
@@ -72,7 +68,7 @@ public class testcaseintegrationsample extends Baseclass{
         Booking booking = payloadsmanager.getResponseFromJson(response.asString());
 
         assertThat(booking.getFirstname()).isNotNull().isNotBlank();
-        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readKey("booking.get.firstname"));
+        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readKey("booking.post.firstname"));
 
     }
 

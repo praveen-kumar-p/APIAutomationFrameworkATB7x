@@ -73,6 +73,7 @@ public class payloadsmanager {
         bookingdates.setCheckout("2024-02-05");
         booking.setBookingdates(bookingdates);
         booking.setAdditionalneeds("Breakfast");
-        return gson.toJson(booking);
+        System.out.println(booking);
+        return "";
     }
 }

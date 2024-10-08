@@ -31,15 +31,14 @@ public class testcaseintegrationflowRetry extends Baseclass{
         validatableResponse.statusCode(200);
 
         // Default Assertion
-        validatableResponse.body("booking.firstname", Matchers.equalTo(propertyReader.readkey("booking.post.firstname")));
-
+        validatableResponse.body("booking.firstname", Matchers.equalTo(propertyReader.readKey("booking.post.firs")));
 
         BookingResponse bookingResponse = payloadsmanager.bookingResponseJava(response.asString());
 
         // AssertJ
         assertThat(bookingResponse.getBookingid()).isNotNull();
         assertThat(bookingResponse.getBooking().getFirstname()).isNotNull().isNotBlank();
-        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(propertyReader.readkey("booking.post.firstname"));
+        assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo(propertyReader.readKey("booking.post.firstname"));
 
 
         iTestContext.setAttribute("bookingid", bookingResponse.getBooking());
@@ -69,7 +68,7 @@ public class testcaseintegrationflowRetry extends Baseclass{
 
         assertThat(booking.getFirstname()).isNotNull().isNotBlank();
 //        assertThat(booking.getFirstname()).isEqualTo("James");
-        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readkey("booking.get.firstname"));
+        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readKey("booking.get.firstname"));
     }
 
     @Test(groups = "integration", priority = 3)
@@ -95,8 +94,8 @@ public class testcaseintegrationflowRetry extends Baseclass{
         Booking booking = payloadsmanager.getResponseFromJson(response.asString());
 
         assertThat(booking.getFirstname()).isNotNull().isNotBlank();
-        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readkey("booking.get.firstname"));
-        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readkey("booking.get.lastname"));
+        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readKey("booking.get.firstname"));
+        assertThat(booking.getFirstname()).isEqualTo(propertyReader.readKey("booking.get.lastname"));
 
     }
 
