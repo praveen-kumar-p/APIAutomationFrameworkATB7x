@@ -14,6 +14,8 @@ import org.testng.Assert;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class testcaseintegrationsample extends Baseclass{
+
+
     @Test(groups = "integration", priority = 1)
     @Owner("Promode")
     @Description("TC#INT1 - Step 1. Verify that the Booking can be Created")
@@ -47,6 +49,7 @@ public class testcaseintegrationsample extends Baseclass{
     @Test(groups = "integration", priority = 2)
     @Owner("Promode")
     @Description("TC#INT1 - Step 2. Verify that the Booking By ID")
+
     public void testVerifyBookingId(ITestContext iTestContext) {
 
         // bookingId -
